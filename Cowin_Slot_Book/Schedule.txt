@@ -1,0 +1,1237 @@
+1. Send OTP
+curl -X POST "https://cdn-api.co-vin.in/api/v2/auth/public/generateOTP" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"mobile\":\"9076411635\"}"
+
+https://cdn-api.co-vin.in/api/v2/auth/public/generateOTP
+
+2. Authenticate OTP and get Bearer Token
+curl -X POST "https://cdn-api.co-vin.in/api/v2/auth/public/confirmOTP" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"otp\":\"ebc8a276ad5ee0e1431fd148397a435c1c09173974085d8ec4c3e0f67bc2c49d\",\"txnId\":\"acf405b8-0715-4d76-b52a-3f013ba68f81\"}"
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIzNDVlMjE3OC00MjJiLTQ5YWYtOWE1YS1jNzMyY2ZiM2YwNTMiLCJ1c2VyX3R5cGUiOiJCRU5FRklDSUFSWSIsInVzZXJfaWQiOiIzNDVlMjE3OC00MjJiLTQ5YWYtOWE1YS1jNzMyY2ZiM2YwNTMiLCJtb2JpbGVfbnVtYmVyIjo5MDc2NDExNjM1LCJiZW5lZmljaWFyeV9yZWZlcmVuY2VfaWQiOjQ5NjU1ODc0MzE0NTAwLCJ0eG5JZCI6ImFjZjQwNWI4LTA3MTUtNGQ3Ni1iNTJhLTNmMDEzYmE2OGY4MSIsImlhdCI6MTYyMDY0NzYwNSwiZXhwIjoxNjIwNjQ4NTA1fQ.fEs3gOJbsWP3l-0ZZfS5MdBgzHaS8hIXiTr37pEqdWY"
+}
+
+3. Find States
+curl -X GET "https://cdn-api.co-vin.in/api/v2/admin/location/states" -H "accept: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIzNDVlMjE3OC00MjJiLTQ5YWYtOWE1YS1jNzMyY2ZiM2YwNTMiLCJ1c2VyX3R5cGUiOiJCRU5FRklDSUFSWSIsInVzZXJfaWQiOiIzNDVlMjE3OC00MjJiLTQ5YWYtOWE1YS1jNzMyY2ZiM2YwNTMiLCJtb2JpbGVfbnVtYmVyIjo5MDc2NDExNjM1LCJiZW5lZmljaWFyeV9yZWZlcmVuY2VfaWQiOjQ5NjU1ODc0MzE0NTAwLCJ0eG5JZCI6ImFjZjQwNWI4LTA3MTUtNGQ3Ni1iNTJhLTNmMDEzYmE2OGY4MSIsImlhdCI6MTYyMDY0NzYwNSwiZXhwIjoxNjIwNjQ4NTA1fQ.fEs3gOJbsWP3l-0ZZfS5MdBgzHaS8hIXiTr37pEqdWY" -H "Accept-Language: en_US" --header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
+
+
+{
+	"states": [{
+		"state_id": 1,
+		"state_name": "Andaman and Nicobar Islands"
+	}, {
+		"state_id": 2,
+		"state_name": "Andhra Pradesh"
+	}, {
+		"state_id": 3,
+		"state_name": "Arunachal Pradesh"
+	}, {
+		"state_id": 4,
+		"state_name": "Assam"
+	}, {
+		"state_id": 5,
+		"state_name": "Bihar"
+	}, {
+		"state_id": 6,
+		"state_name": "Chandigarh"
+	}, {
+		"state_id": 7,
+		"state_name": "Chhattisgarh"
+	}, {
+		"state_id": 8,
+		"state_name": "Dadra and Nagar Haveli"
+	}, {
+		"state_id": 37,
+		"state_name": "Daman and Diu"
+	}, {
+		"state_id": 9,
+		"state_name": "Delhi"
+	}, {
+		"state_id": 10,
+		"state_name": "Goa"
+	}, {
+		"state_id": 11,
+		"state_name": "Gujarat"
+	}, {
+		"state_id": 12,
+		"state_name": "Haryana"
+	}, {
+		"state_id": 13,
+		"state_name": "Himachal Pradesh"
+	}, {
+		"state_id": 14,
+		"state_name": "Jammu and Kashmir"
+	}, {
+		"state_id": 15,
+		"state_name": "Jharkhand"
+	}, {
+		"state_id": 16,
+		"state_name": "Karnataka"
+	}, {
+		"state_id": 17,
+		"state_name": "Kerala"
+	}, {
+		"state_id": 18,
+		"state_name": "Ladakh"
+	}, {
+		"state_id": 19,
+		"state_name": "Lakshadweep"
+	}, {
+		"state_id": 20,
+		"state_name": "Madhya Pradesh"
+	}, {
+		"state_id": 21,
+		"state_name": "Maharashtra"
+	}, {
+		"state_id": 22,
+		"state_name": "Manipur"
+	}, {
+		"state_id": 23,
+		"state_name": "Meghalaya"
+	}, {
+		"state_id": 24,
+		"state_name": "Mizoram"
+	}, {
+		"state_id": 25,
+		"state_name": "Nagaland"
+	}, {
+		"state_id": 26,
+		"state_name": "Odisha"
+	}, {
+		"state_id": 27,
+		"state_name": "Puducherry"
+	}, {
+		"state_id": 28,
+		"state_name": "Punjab"
+	}, {
+		"state_id": 29,
+		"state_name": "Rajasthan"
+	}, {
+		"state_id": 30,
+		"state_name": "Sikkim"
+	}, {
+		"state_id": 31,
+		"state_name": "Tamil Nadu"
+	}, {
+		"state_id": 32,
+		"state_name": "Telangana"
+	}, {
+		"state_id": 33,
+		"state_name": "Tripura"
+	}, {
+		"state_id": 34,
+		"state_name": "Uttar Pradesh"
+	}, {
+		"state_id": 35,
+		"state_name": "Uttarakhand"
+	}, {
+		"state_id": 36,
+		"state_name": "West Bengal"
+	}],
+	"ttl": 24
+}
+
+4. Get Districts in a state
+curl -X GET "https://cdn-api.co-vin.in/api/v2/admin/location/districts/21" -H "accept: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIzNDVlMjE3OC00MjJiLTQ5YWYtOWE1YS1jNzMyY2ZiM2YwNTMiLCJ1c2VyX3R5cGUiOiJCRU5FRklDSUFSWSIsInVzZXJfaWQiOiIzNDVlMjE3OC00MjJiLTQ5YWYtOWE1YS1jNzMyY2ZiM2YwNTMiLCJtb2JpbGVfbnVtYmVyIjo5MDc2NDExNjM1LCJiZW5lZmljaWFyeV9yZWZlcmVuY2VfaWQiOjQ5NjU1ODc0MzE0NTAwLCJ0eG5JZCI6ImFjZjQwNWI4LTA3MTUtNGQ3Ni1iNTJhLTNmMDEzYmE2OGY4MSIsImlhdCI6MTYyMDY0NzYwNSwiZXhwIjoxNjIwNjQ4NTA1fQ.fEs3gOJbsWP3l-0ZZfS5MdBgzHaS8hIXiTr37pEqdWY" -H "Accept-Language: en_US" --header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
+
+
+{
+	"districts": [{
+		"district_id": 391,
+		"district_name": "Ahmednagar"
+	}, {
+		"district_id": 364,
+		"district_name": "Akola"
+	}, {
+		"district_id": 366,
+		"district_name": "Amravati"
+	}, {
+		"district_id": 397,
+		"district_name": "Aurangabad "
+	}, {
+		"district_id": 384,
+		"district_name": "Beed"
+	}, {
+		"district_id": 370,
+		"district_name": "Bhandara"
+	}, {
+		"district_id": 367,
+		"district_name": "Buldhana"
+	}, {
+		"district_id": 380,
+		"district_name": "Chandrapur"
+	}, {
+		"district_id": 388,
+		"district_name": "Dhule"
+	}, {
+		"district_id": 379,
+		"district_name": "Gadchiroli"
+	}, {
+		"district_id": 378,
+		"district_name": "Gondia"
+	}, {
+		"district_id": 386,
+		"district_name": "Hingoli"
+	}, {
+		"district_id": 390,
+		"district_name": "Jalgaon"
+	}, {
+		"district_id": 396,
+		"district_name": "Jalna"
+	}, {
+		"district_id": 371,
+		"district_name": "Kolhapur"
+	}, {
+		"district_id": 383,
+		"district_name": "Latur"
+	}, {
+		"district_id": 395,
+		"district_name": "Mumbai"
+	}, {
+		"district_id": 365,
+		"district_name": "Nagpur"
+	}, {
+		"district_id": 382,
+		"district_name": "Nanded"
+	}, {
+		"district_id": 387,
+		"district_name": "Nandurbar"
+	}, {
+		"district_id": 389,
+		"district_name": "Nashik"
+	}, {
+		"district_id": 381,
+		"district_name": "Osmanabad"
+	}, {
+		"district_id": 394,
+		"district_name": "Palghar"
+	}, {
+		"district_id": 385,
+		"district_name": "Parbhani"
+	}, {
+		"district_id": 363,
+		"district_name": "Pune"
+	}, {
+		"district_id": 393,
+		"district_name": "Raigad"
+	}, {
+		"district_id": 372,
+		"district_name": "Ratnagiri"
+	}, {
+		"district_id": 373,
+		"district_name": "Sangli"
+	}, {
+		"district_id": 376,
+		"district_name": "Satara"
+	}, {
+		"district_id": 374,
+		"district_name": "Sindhudurg"
+	}, {
+		"district_id": 375,
+		"district_name": "Solapur"
+	}, {
+		"district_id": 392,
+		"district_name": "Thane"
+	}, {
+		"district_id": 377,
+		"district_name": "Wardha"
+	}, {
+		"district_id": 369,
+		"district_name": "Washim"
+	}, {
+		"district_id": 368,
+		"district_name": "Yavatmal"
+	}],
+	"ttl": 24
+}
+
+4. Get Sessions by District
+curl -X GET "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=392&date=11-05-2021" -H "accept: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIzNDVlMjE3OC00MjJiLTQ5YWYtOWE1YS1jNzMyY2ZiM2YwNTMiLCJ1c2VyX3R5cGUiOiJCRU5FRklDSUFSWSIsInVzZXJfaWQiOiIzNDVlMjE3OC00MjJiLTQ5YWYtOWE1YS1jNzMyY2ZiM2YwNTMiLCJtb2JpbGVfbnVtYmVyIjo5MDc2NDExNjM1LCJiZW5lZmljaWFyeV9yZWZlcmVuY2VfaWQiOjQ5NjU1ODc0MzE0NTAwLCJ0eG5JZCI6ImFjZjQwNWI4LTA3MTUtNGQ3Ni1iNTJhLTNmMDEzYmE2OGY4MSIsImlhdCI6MTYyMDY0NzYwNSwiZXhwIjoxNjIwNjQ4NTA1fQ.fEs3gOJbsWP3l-0ZZfS5MdBgzHaS8hIXiTr37pEqdWY" -H "Accept-Language: en_US" --header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
+
+{
+	"sessions": [{
+		"center_id": 4806,
+		"name": "DGD Wazirabad PHC",
+		"address": "Plot No.1, Street No.3, Main Road, Wazirabad Village, Delhi-110084",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110084,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "3797ed4b-4cc2-4742-bce1-8ae9baa65bd6",
+		"date": "11-05-2021",
+		"available_capacity": 9,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 580271,
+		"name": "Hindu Rao Hospital DH SITE 1",
+		"address": "HINDU RAO HOSPITAL MALKA GANJ",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110007,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "7365a8ff-076a-49c0-bcce-11223f5d956f",
+		"date": "11-05-2021",
+		"available_capacity": 90,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 580268,
+		"name": "Girdhari Lal SITE 1",
+		"address": "MRS GLM Hospital",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110002,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "3ff68ffd-11b9-45eb-8199-0f7dc626b81c",
+		"date": "11-05-2021",
+		"available_capacity": 89,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 4383,
+		"name": "Lady Reading Health School PHC",
+		"address": "Ram Chand Lohiya MCH Centre Bara Hindu Roa Delhi- 6",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "de66fd82-05d8-4959-a038-c1c0651f7b1b",
+		"date": "11-05-2021",
+		"available_capacity": 3,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 4675,
+		"name": "SPUHC Jagatpur PHC",
+		"address": "Khasara No. 1001, Gali No. 12 Jagatpur Extension, Near Rama Public School, Delhi-110084",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110084,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "af5a6ed9-e12b-4ba1-8b15-05dc8a5cbad7",
+		"date": "11-05-2021",
+		"available_capacity": 12,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 692172,
+		"name": "Hindu Rao Hospital SITE 5",
+		"address": "HINDU RAO HOSPITAL MALKA GANJ",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110007,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "8ef7290b-2bd4-404f-88c7-da618d996353",
+		"date": "11-05-2021",
+		"available_capacity": 182,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 563048,
+		"name": "G.B.Pant Hospital DH SITE 2",
+		"address": "J.L.N Marg, Delhi Gate, New Delhi 110001",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110001,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "4483e609-7dfc-4627-8f4d-da1b6a548477",
+		"date": "11-05-2021",
+		"available_capacity": 71,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 580638,
+		"name": "ARUNA ASAF HOSPITAL SITE 2",
+		"address": "5-Rajpur Road, Delhi-110054",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "63534146-533f-4183-8752-3504118806db",
+		"date": "11-05-2021",
+		"available_capacity": 125,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 666969,
+		"name": "LNJP Hospital DH Site 6",
+		"address": "JLNMarg, New Delhi-",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "a83ce134-b8ec-448d-946a-e5f8714a6042",
+		"date": "11-05-2021",
+		"available_capacity": 191,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 580269,
+		"name": "Kasturba Hospital DH SITE 1",
+		"address": "Kasturba Hospital, Jama Masjid, Darya Ganj, Delhi-110006",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "cf154ca0-6c3e-47bf-bc51-4ef4f99fcd3d",
+		"date": "11-05-2021",
+		"available_capacity": 16,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 8117,
+		"name": "Northern Railway Hospital",
+		"address": "Near Fire Station, Shyama Prasad Mukherjee Marg, Old Delhi, New Delhi, Delhi 110006",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "12ea80bd-07e5-4a6c-8e13-ed749ac8c21c",
+		"date": "11-05-2021",
+		"available_capacity": 136,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 645199,
+		"name": "Balak Ram Hospital SITE 2",
+		"address": "BALAK RAM HOSPITAL, TIMAR PUR DELHI 110054",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110054,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "4acdd29c-65de-4df9-948e-5a20ed9609f8",
+		"date": "11-05-2021",
+		"available_capacity": 186,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 606543,
+		"name": "BURARI HOSPTIAL SITE 4",
+		"address": "Kaoushik Enclave Shankar Pura Burari",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110084,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "3bc34e87-066d-40b9-b8a3-e49b8d2c2650",
+		"date": "11-05-2021",
+		"available_capacity": 152,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 560697,
+		"name": "LNJP Hospital Site 3",
+		"address": "JLNMarg, New Delhi-",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "1d13e4ca-2867-4939-b8f6-80a6b5bcc110",
+		"date": "11-05-2021",
+		"available_capacity": 194,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 609999,
+		"name": "Lala Duli Chand Polyclinic",
+		"address": "Lala Duli Chand Polyclinic,Bara Hindu Rao",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110007,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "eecebb38-d83b-4a32-ab7a-3c3a645b69a9",
+		"date": "11-05-2021",
+		"available_capacity": 31,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 4418,
+		"name": "LNJP Hospital DH Site 1",
+		"address": "JLNMarg, New Delhi-",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "5841ef1e-d431-4145-a531-0a3273b9e2ea",
+		"date": "11-05-2021",
+		"available_capacity": 177,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 692174,
+		"name": "Hindu Rao Hospital SITE 6",
+		"address": "HINDU RAO HOSPITAL MALKA GANJ",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110007,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "26ab3c52-be4f-44d6-9356-ee809a7a2c45",
+		"date": "11-05-2021",
+		"available_capacity": 169,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 580260,
+		"name": "MAIDS SITE 1",
+		"address": "MAIDS",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "c80872a5-fcb7-4b33-84b1-3f09b33b724f",
+		"date": "11-05-2021",
+		"available_capacity": 126,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 580262,
+		"name": "Balak Ram Hospital SITE 1",
+		"address": "BALAK RAM HOSPITAL, TIMAR PUR DELHI 110054",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110054,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "df0e921e-ae6b-4915-b2ba-80e42d1dc770",
+		"date": "11-05-2021",
+		"available_capacity": 137,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 560694,
+		"name": "LNJP Hospital Site 2",
+		"address": "JLNMarg, New Delhi-",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "530c181a-9ee3-4391-86ca-21c0061fea02",
+		"date": "11-05-2021",
+		"available_capacity": 197,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 580272,
+		"name": "Hindu Rao Hosl DH SITE 2",
+		"address": "HINDU RAO HOSPITAL MALKA GANJ",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110007,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "35084951-c10c-4388-b8e5-ad940ba5e96b",
+		"date": "11-05-2021",
+		"available_capacity": 106,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 666966,
+		"name": "LNJP Hospital DH Site 5",
+		"address": "JLNMarg, New Delhi-",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "2969432a-104a-44e0-83a8-c4bedf6d6818",
+		"date": "11-05-2021",
+		"available_capacity": 191,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 580273,
+		"name": "MAMC SITE 1",
+		"address": "MAMC Campus",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "c09c186e-76a0-429d-815c-42f6f5ec3d47",
+		"date": "11-05-2021",
+		"available_capacity": 4,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 645205,
+		"name": "Balak Ram Hospital SITE 3",
+		"address": "BALAK RAM HOSPITAL, TIMAR PUR DELHI 110054",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110054,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "032c7b6f-7c0f-4afe-afe4-4b77a83000a0",
+		"date": "11-05-2021",
+		"available_capacity": 191,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 658584,
+		"name": "Balak Ram Hospital SITE 4",
+		"address": "BALAK RAM HOSPITAL, TIMAR PUR DELHI 110054",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110054,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "d02ad379-a0df-4dc6-83f2-1474b05d07c9",
+		"date": "11-05-2021",
+		"available_capacity": 197,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 606553,
+		"name": "BURARI HOSPTIAL SITE 5",
+		"address": "Kaoushik Enclave Shankar Pura Burari",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110084,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "49c611c1-cdbf-4add-8036-1b3e1b819d22",
+		"date": "11-05-2021",
+		"available_capacity": 183,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 8069,
+		"name": "Hindu Rao Hospital SITE 4",
+		"address": "HINDU RAO HOSPITAL MALKA GANJ",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110007,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "270559ba-9399-4ccd-bc08-07e535b654b6",
+		"date": "11-05-2021",
+		"available_capacity": 179,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 4809,
+		"name": "DGD Majnu Ka Tilla PHC",
+		"address": "F-Block,Basti Vikas Kendra,near Community Center, Aruna Nagar, Majnu Ka Tilla,Delhi-110054",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110054,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "93051184-1e18-4455-a68b-278324d23cb7",
+		"date": "11-05-2021",
+		"available_capacity": 41,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 560742,
+		"name": "Burari Hospital Session Site 6",
+		"address": "Kaushik Enclave, Shankarpura, Burari",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110084,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "b829a937-b8c5-4009-9bcf-23332de0c0e3",
+		"date": "11-05-2021",
+		"available_capacity": 175,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 3,
+		"name": "Aruna Asaf Ali Hospital DH",
+		"address": "5-Rajpur Road, Delhi-110054",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110054,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "222e9c02-47c1-4e7f-8c1f-95e2677192f4",
+		"date": "11-05-2021",
+		"available_capacity": 150,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 663057,
+		"name": "Hindu Rao Hosl DH SITE 3",
+		"address": "HINDU RAO HOSPITAL MALKA GANJ",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110007,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "db90b313-75d1-41c7-8f02-b8d89eb89a2e",
+		"date": "11-05-2021",
+		"available_capacity": 176,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 560737,
+		"name": "Burari Hospital Site 2",
+		"address": "Kaushik Enclave, Shankarpura, Burari",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110084,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 76,
+		"fee_type": "Free",
+		"session_id": "eb394b6d-7b3f-4836-87e3-ce143b4bd61c",
+		"date": "11-05-2021",
+		"available_capacity": 160,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 4422,
+		"name": "Dr. N.C. Joshi Hospital",
+		"address": "Joshi Road, Karol Bagh, New Delhi-110005",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110005,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "450b4b0b-7aca-42aa-9d22-91a9c889e734",
+		"date": "11-05-2021",
+		"available_capacity": 49,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 658585,
+		"name": "Balak Ram Hospital SITE 5",
+		"address": "BALAK RAM HOSPITAL, TIMAR PUR DELHI 110054",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110054,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "dfb6b4b2-ccd8-43c4-a1b1-1296bb7a1bb9",
+		"date": "11-05-2021",
+		"available_capacity": 200,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 4586,
+		"name": "DGD Gali Samosan PHC",
+		"address": "1st Floor, Community Centre, Faras Khana,Delhi-06",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "a7ac6a8a-388f-4a50-97da-80e72c9db892",
+		"date": "11-05-2021",
+		"available_capacity": 36,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 693756,
+		"name": "Sarvodhya V Mori G NO.1 SITE 5",
+		"address": "Mori Gate No.1",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "d28f5bb4-7dd6-4b8f-a847-07553dbdd925",
+		"date": "11-05-2021",
+		"available_capacity": 1,
+		"fee": "0",
+		"min_age_limit": 18,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 4679,
+		"name": "DGD Ajmeri Gate PHC",
+		"address": "MPCC FIRST FLOOR 4528 Gali Shahtara, Ajmeri Gate, Delhi- 06",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "6bbc612c-4e25-4e7d-90e8-c54f9b6cc607",
+		"date": "11-05-2021",
+		"available_capacity": 25,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 560739,
+		"name": "Burari Hospital Site 3",
+		"address": "Kaushik Enclave, Shankarpura, Burari",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110084,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "e9c692cb-56cc-407e-83c1-9bb75917440e",
+		"date": "11-05-2021",
+		"available_capacity": 165,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 4670,
+		"name": "MCW Bagh Kare Khan PHC",
+		"address": "M And CW Centre Bagh Kare Khan, Pantsnala Marg, Kishan Ganj, Delhi -110007",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110007,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "2ee1379c-e213-4d87-8d59-2cdfecc0a317",
+		"date": "11-05-2021",
+		"available_capacity": 37,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 580275,
+		"name": "MAMC SITE 2",
+		"address": "MAMC Campus",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "1737e99d-8154-4a16-81be-48c8d55a6ee4",
+		"date": "11-05-2021",
+		"available_capacity": 80,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 4776,
+		"name": "MH Kamla Nehru CHC",
+		"address": "Maternity Home Kamla Nehru, Vivekanand Padam Nagar Sarai Rohilla, Delhi-7",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110007,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "1e61ef06-dcaf-4b42-9285-e11efe07fb7c",
+		"date": "11-05-2021",
+		"available_capacity": 26,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 693450,
+		"name": "SBV JAMA MASJID URDU SITE 1",
+		"address": "Jama Masjid (Urdu Medium)",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "3f59c7ae-1d36-49e0-a04b-ff0f11653096",
+		"date": "11-05-2021",
+		"available_capacity": 1,
+		"fee": "0",
+		"min_age_limit": 18,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 672068,
+		"name": "Balak Ram Hospital SITE 6",
+		"address": "BALAK RAM HOSPITAL, TIMAR PUR DELHI 110054",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110054,
+		"from": "09:00:00",
+		"to": "18:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "0c1e4dbe-8de8-4ce6-977a-f92c1b489289",
+		"date": "11-05-2021",
+		"available_capacity": 198,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-06:00PM"]
+	}, {
+		"center_id": 4681,
+		"name": "DGD Chamelian Road PHC",
+		"address": "6562-13, Chamelian Road, Delhi",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "dbc29f9d-11de-4fba-a816-9f601025de41",
+		"date": "11-05-2021",
+		"available_capacity": 2,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 560700,
+		"name": "LNJP Hospital Site 4",
+		"address": "JLNMarg, New Delhi-",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110006,
+		"from": "09:00:00",
+		"to": "21:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "0aa508e6-e5d6-40d0-836d-53a02ed182d5",
+		"date": "11-05-2021",
+		"available_capacity": 192,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-12:00PM", "12:00PM-03:00PM", "03:00PM-06:00PM", "06:00PM-09:00PM"]
+	}, {
+		"center_id": 560735,
+		"name": "Burari Hospital Session Site 1",
+		"address": "Kaushik Enclave, Shankarpura, Burari",
+		"state_name": "Delhi",
+		"district_name": "Central Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110084,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "72b7261b-6612-4f87-81d6-c91e60a91ad9",
+		"date": "11-05-2021",
+		"available_capacity": 1,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}]
+}
+
+5. Search for Sessions in District by age
+curl -X GET "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=146&date=11-05-2021&min_age_limit=18" -H "accept: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIzNDVlMjE3OC00MjJiLTQ5YWYtOWE1YS1jNzMyY2ZiM2YwNTMiLCJ1c2VyX3R5cGUiOiJCRU5FRklDSUFSWSIsInVzZXJfaWQiOiIzNDVlMjE3OC00MjJiLTQ5YWYtOWE1YS1jNzMyY2ZiM2YwNTMiLCJtb2JpbGVfbnVtYmVyIjo5MDc2NDExNjM1LCJiZW5lZmljaWFyeV9yZWZlcmVuY2VfaWQiOjQ5NjU1ODc0MzE0NTAwLCJ0eG5JZCI6ImFjZjQwNWI4LTA3MTUtNGQ3Ni1iNTJhLTNmMDEzYmE2OGY4MSIsImlhdCI6MTYyMDY0NzYwNSwiZXhwIjoxNjIwNjQ4NTA1fQ.fEs3gOJbsWP3l-0ZZfS5MdBgzHaS8hIXiTr37pEqdWY" -H "Accept-Language: en_US" --header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
+
+
+{
+	"sessions": [{
+		"center_id": 629601,
+		"name": "ESI Narela",
+		"address": "Narela",
+		"state_name": "Delhi",
+		"district_name": "North Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110036,
+		"from": "09:00:00",
+		"to": "17:00:00",
+		"lat": 28,
+		"long": 77,
+		"fee_type": "Free",
+		"session_id": "e14b7050-56b5-43cc-a4ad-12f5561d6606",
+		"date": "11-05-2021",
+		"available_capacity": 1,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVAXIN",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-05:00PM"]
+	}, {
+		"center_id": 5243,
+		"name": "DGD Harewali PHC",
+		"address": "Village Harewali, Delhi 39",
+		"state_name": "Delhi",
+		"district_name": "North Delhi",
+		"block_name": "Not Applicable",
+		"pincode": 110039,
+		"from": "09:00:00",
+		"to": "18:00:00",
+		"lat": 28,
+		"long": 76,
+		"fee_type": "Free",
+		"session_id": "c6dd79ef-da72-4d51-8e13-ee0adc25a26e",
+		"date": "11-05-2021",
+		"available_capacity": 10,
+		"fee": "0",
+		"min_age_limit": 45,
+		"vaccine": "COVISHIELD",
+		"slots": ["09:00AM-11:00AM", "11:00AM-01:00PM", "01:00PM-03:00PM", "03:00PM-06:00PM"]
+	}]
+}
+
+6. Get Session ID from previous request for the Center & Hit the schedule End-Point with Benefeciary Reference ID
+curl -X POST "https://cdn-api.co-vin.in/api/v2/appointment/schedule" 
+{
+  "dose": 1,
+  "session_id": "98e411fd-ae79-429f-a1ab-084d8dca980a",
+  "slot": "03:00PM-05:00PM",
+  "beneficiaries": [
+    "49845773524320"
+  ]
+}
+
+
+benefeciaries ref Id can be found from the COWIN login :-
+{"beneficiaries":[{"beneficiary_reference_id":"49655874314500","name":"Manish Kumar Singh","birth_year":"1990","gender":"Male","mobile_number":"1635","photo_id_type":"PAN Card","photo_id_number":"CORPS2004D","comorbidity_ind":"N","vaccination_status":"Not Vaccinated","vaccine":"","dose1_date":"","dose2_date":"","appointments":[]}]}
+
+
